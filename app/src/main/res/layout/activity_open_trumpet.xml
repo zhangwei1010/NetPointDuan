@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white">
+
+	<LinearLayout
+		android:id="@+id/ll_usernam"
+		android:layout_width="@dimen/dp_300"
+		android:layout_height="@dimen/dp_49"
+		android:layout_below="@+id/tv_successful_sign"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="@dimen/dp_30"
+		android:layout_marginRight="40dp"
+		android:background="@drawable/login_username_drawable">
+
+		<ImageView
+			android:layout_width="@dimen/dp_15"
+			android:layout_height="@dimen/dp_17"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="35dp"
+			android:src="@drawable/phone" />
+
+		<EditText
+			android:id="@+id/et_mobile"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="15dp"
+			android:background="@null"
+			android:hint="请输入手机号"
+			android:inputType="phone"
+			android:textColorHint="#cccccc"
+			android:textSize="17sp" />
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/ll_input_pwd"
+		android:layout_width="@dimen/dp_300"
+		android:layout_height="@dimen/dp_49"
+		android:layout_below="@+id/ll_usernam"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="@dimen/dp_20"
+		android:layout_marginRight="40dp"
+		android:background="@drawable/login_username_drawable">
+
+		<ImageView
+			android:layout_width="@dimen/dp_15"
+			android:layout_height="@dimen/dp_18"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="35dp"
+			android:src="@drawable/login_pwd" />
+
+		<EditText
+			android:id="@+id/ed_verticition"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="15dp"
+			android:layout_weight="1"
+			android:background="@null"
+			android:digits="1234567890"
+			android:hint="验证码"
+			android:inputType="phone"
+			android:textColorHint="#cccccc"
+			android:textSize="17sp" />
+
+		<TextView
+			android:id="@+id/tv_get_vertication"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginRight="10dp"
+			android:text="获取验证码"
+			android:textColor="#333333" />
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/ll_comfirm_pwd"
+		android:layout_width="@dimen/dp_300"
+		android:layout_height="@dimen/dp_49"
+		android:layout_below="@+id/ll_input_pwd"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="@dimen/dp_20"
+		android:layout_marginRight="40dp"
+		android:background="@drawable/login_username_drawable">
+
+		<ImageView
+			android:layout_width="@dimen/dp_15"
+			android:layout_height="@dimen/dp_18"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="35dp"
+			android:src="@drawable/login_pwd" />
+
+		<EditText
+			android:id="@+id/ed_confirm_password"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignEnd="@+id/ll_comfirm_pwd"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="15dp"
+			android:background="@null"
+			android:hint="确认密码"
+			android:inputType="textPassword|phone"
+			android:textColorHint="#cccccc"
+			android:textSize="17sp" />
+
+	</LinearLayout>
+
+	<RelativeLayout
+		android:id="@+id/rl_login"
+		android:layout_width="@dimen/dp_300"
+		android:layout_height="@dimen/dp_49"
+		android:layout_below="@+id/ll_comfirm_pwd"
+		android:layout_centerInParent="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="@dimen/dp_20"
+		android:layout_marginRight="40dp"
+		android:background="@drawable/corner_24_login_drawable">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:gravity="center"
+			android:text="@string/login"
+			android:textColor="@color/white"
+			android:textSize="18sp" />
+
+	</RelativeLayout>
+</RelativeLayout>

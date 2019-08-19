@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/dp_64"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/dp_64"
+		android:orientation="horization">
+
+		<ImageView
+			android:id="@+id/iv_icon"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="15dp"
+			android:src="@drawable/express_point_red" />
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="15dp"
+			android:layout_marginTop="15dp"
+			android:layout_marginBottom="15dp"
+			android:layout_weight="1"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/tv_current_position"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ellipsize="end"
+				android:gravity="center"
+				android:singleLine="true"
+				android:text="鑫苑世纪东城·西苑快递点"
+				android:textColor="#333333"
+				android:textSize="16sp" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horization">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="距离目前位置"
+					android:textColor="#666666"
+					android:textSize="16sp" />
+
+				<TextView
+					android:id="@+id/tv_distance"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="15dp"
+					android:gravity="center"
+					android:text="  250km"
+					android:textColor="#54ad2c"
+					android:textSize="16sp" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="15dp"
+			android:layout_marginRight="15dp"
+			android:gravity="center"
+			android:orientation="horization">
+
+			<TextView
+				android:id="@+id/tv_now_go"
+				android:layout_width="71dp"
+				android:layout_height="27dp"
+				android:background="@drawable/stroke_grey_drawable"
+				android:gravity="center"
+				android:text="立即前往"
+				android:textColor="#666666"
+				android:textSize="13sp" />
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:background="#e4e4e4"></View>
+
+</LinearLayout>

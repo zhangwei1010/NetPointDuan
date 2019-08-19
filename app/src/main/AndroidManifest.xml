@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.net.point">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    ---------------------
+    版权声明：本文为CSDN博主「binjianliu」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+    原文链接：https://blog.csdn.net/binjianliu/article/details/78087655
+
+    <application
+        android:name=".NetPointApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.mine.CustomerPhoneActivity"></activity>
+        <activity android:name=".ui.homepage.MyContractActivity" />
+        <activity android:name=".ui.homepage.LoginWaysActivity" />
+        <activity android:name=".ui.mine.HelpCenterActivity" />
+        <activity android:name=".ui.homepage.NetworkSupervisionActivity" />
+        <activity android:name=".ui.homepage.ShareActivity" />
+        <activity
+            android:name=".ui.login.StartUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Flush">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- ###################添加UmengAppkey###################### -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5d36acfb3fc1956dc50009dd" /> <!-- 调用微信，需要注册的回调activity -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 调用QQ -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1109688534" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- baiduditu -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="bfssDjojoyA5OoHooQsWGDceNnKbvxO0" />
+        <service
+            android:name=".service.DownloadIntentService"
+            android:exported="false" />
+        <activity
+            android:name=".ui.homepage.MyPostStationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.homepage.MapViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.net.point.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".ui.mine.MyIntegralActivity" />
+        <activity android:name=".ui.homepage.MyBillActivity" />
+        <activity android:name=".ui.homepage.MyBenefitsActivity" />
+        <activity android:name=".ui.homepage.MyPenaltyActivity" />
+        <activity android:name=".ui.login.ErrorActivity" />
+        <activity android:name=".ui.homepage.MyReceiptActivity" />
+        <activity android:name=".ui.homepage.OpenTrumpetActivity" />
+        <activity android:name=".ui.homepage.MyDispatchActivity" />
+        <activity android:name=".ui.mine.FunctionCommitActivity" />
+        <activity android:name=".ui.mine.DysfunctionActivity" />
+        <activity android:name=".ui.mine.PersonInforActivity" />
+        <activity android:name=".ui.homepage.OrderManageDetailsActivity" />
+        <activity android:name=".ui.homepage.OrderManageActivity" />
+        <activity android:name=".ui.homepage.InsertOrderActivity" />
+        <activity android:name=".ui.login.RegisterActivity" />
+        <activity android:name=".ui.login.PayMoneyActivity" />
+        <activity android:name=".ui.login.SuccessfulSignActivity" />
+        <activity android:name=".ui.login.TwoPayWayActivity" />
+        <activity android:name=".ui.login.SignContractThreeActivity" />
+        <activity android:name=".ui.login.SignContractTwoActivity" />
+        <activity android:name=".ui.login.FoundPasswordActivity" />
+        <activity android:name=".ui.login.SignContractActivity" />
+        <activity android:name=".ui.login.AdoptActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.login.PaymentAdvanceActivity" />
+        <activity android:name=".ui.login.NetPointApplyActivity" />
+        <activity android:name=".ui.login.InReViewActivity" />
+        <activity android:name=".ui.MainActivity" /> <!-- 支付宝支付相关 -->
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+    </application>
+
+</manifest>

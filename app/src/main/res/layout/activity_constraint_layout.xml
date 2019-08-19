@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayout">
+    /**
+    layout_width 设置组件的宽度
+    layout_height设置组件的高度
+    */
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="147dp"
+        android:layout_marginBottom="146dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+    /**
+    id 给组件定义一个id值，供后期使用
+    text 设置组件的显示文字
+    textsize 设置组件的文字大小
+    layout_constraintBottom_toBottomOf 表示此控件的底部边框与某个控件的底部边框水平对齐或其上边
+    layout_constraintEnd_toEndOf 表示此控件的右边界与某个控件的右边界对齐
+    layout_constraintHorizontal_bias 表示此控件在布局中的水平方向上的偏移百分百
+    bias值=子View左相关的长度/(子View左相关的长度+其右相关的长度)
+    layout_constraintStart_toStartOf 表示此控件的左边界与某个控件的左边界在同一垂直线上
+    layout_constraintTop_toBottomOf 表示此控件的顶部边框与某个控件的底部边框水平对齐或在其下边
+    layout_constraintVertical_chainStyle chainStyle链条样式
+    * spread - 元素将被展开（默认样式）
+    * 加权链 - 在spread模式下，如果某些小部件设置为MATCH_CONSTRAINT，则它们将拆分可用空间
+    * spread_inside 类似，但链的端点将不会扩展
+    * packed 链的元素将被打包在一起。 孩子的水平或垂直偏差属性将影响包装元素的定位
+    layout_constraintTop_toTopOf 表示此控件的顶部边框与某个控件的顶部边框水平对齐或在其下边
+    */
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    /**
+    layout_marginStart 本元素里开始的位置的距离
+    layout_marginTop 离某元素上边缘的距离
+    layout_marginEnd 本元素里结束位置的距离
+    layout_constraintEnd_toStartOf 表示此控件的右边框与某个控件的左边框对齐
+    */
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="151dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    /**
+    * layout_constraintStart_toEndOf 表示此控件的左边框与某个控件的右边框对齐
+    线性布局（LinearLayout）：按照垂直或者水平方向布局的组件
+    帧布局（FrameLayout）：组件从屏幕左上方布局组件
+    表格布局（TableLayout）：按照行列方式布局组件
+    绝对布局（AbsoluteLayout）：按照绝对坐标来布局组件
+    相对布局（RelativeLayout）：相对其它组件的布局方式
+    约束布局 （ConstraintLayout）：按照约束布局组件
+    android:shrinkColumns 设置可收缩的列
+    android:stretchColumns 设置可伸展的列
+    android:collapseColumns 设置要隐藏的列
+    默认所有的列为stretchColumns，如只有一个控件则独占一行
+    android:layout_column表示当前控件在第几列
+    android:layout_span表示合并单元格个数
+    */
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+    /**
+    orientation="vertical" 垂直布局
+    layout_constraintGuide_begin 表示在布局中引导线距顶部或左边框的距离
+    */
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="8dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

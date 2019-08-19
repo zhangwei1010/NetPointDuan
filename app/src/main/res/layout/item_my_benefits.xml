@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="2019-6月"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_benefits_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="郑州市收益"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_benefits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="+100000.00"
+        android:textColor="#f78000"
+        android:textSize="14sp" />
+
+</LinearLayout>

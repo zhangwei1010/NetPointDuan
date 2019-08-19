@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:id="@+id/tvForgetPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="请选择您要申请的网点！"
+        android:textColor="#333333"
+        android:textSize="19sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_province"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_49"
+        android:layout_below="@+id/tvForgetPwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="@dimen/dp_35"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/login_username_drawable">
+
+        <ImageView
+            android:id="@+id/ivProvince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:src="@drawable/net_point_province" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/ivProvince"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:background="@null"
+            android:text="@string/choose_province"
+            android:textColorHint="#cccccc"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/arrow_right_white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_city"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_49"
+        android:layout_below="@+id/rl_province"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="@dimen/dp_21"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/login_username_drawable">
+
+        <ImageView
+            android:id="@+id/ivCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:src="@drawable/net_point_city" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/ivCity"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:background="@null"
+            android:text="@string/choose_prefecture_level_citys"
+            android:textColorHint="#cccccc"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/arrow_right_white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_counties"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_49"
+        android:layout_below="@+id/rl_city"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="@dimen/dp_21"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/login_username_drawable">
+
+        <ImageView
+            android:id="@+id/ivCounties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:src="@drawable/net_point_counties" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/ivCounties"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@null"
+            android:text="@string/choose_districts_counties"
+            android:textColorHint="#cccccc"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/arrow_right_white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_net_point"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_49"
+        android:layout_below="@+id/rl_counties"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="@dimen/dp_21"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/login_username_drawable">
+
+        <ImageView
+            android:id="@+id/iv_net_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:src="@drawable/net_point_street" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/iv_net_point"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@null"
+            android:text="@string/choose_net_point"
+            android:textColorHint="#cccccc"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/arrow_right_white" />
+
+    </RelativeLayout>
+</RelativeLayout>

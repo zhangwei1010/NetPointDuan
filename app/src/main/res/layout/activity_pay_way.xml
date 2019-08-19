@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_2"
+    android:orientation="vertical"
+    tools:context=".ui.login.PaymentAdvanceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:layout_marginTop="@dimen/dp_14"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="14sp"
+            android:layout_marginLeft="30dp"
+            android:text="开户名：" />
+
+        <EditText
+            android:id="@+id/et_customer_name"
+            android:layout_width="match_parent" android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:inputType="textNoSuggestions" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:layout_marginTop="@dimen/dp_14"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp" android:textSize="14sp"
+            android:text="银行账号：" />
+
+        <EditText
+            android:id="@+id/ed_bank_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null" android:textSize="14sp"
+            android:inputType="textNoSuggestions" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:layout_marginTop="@dimen/dp_14"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginLeft="30dp"
+            android:text="银行开户行：" />
+
+        <EditText
+            android:id="@+id/ed_bank_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="14sp"
+            android:inputType="textNoSuggestions" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_14"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvUpload"
+            android:layout_width="126dp"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/corner_3_pay_way_drawable"
+            android:gravity="center"
+            android:text="上传转账凭证"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ivUpload"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_150"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/grey_2"
+            android:gravity="center"
+            android:text="上传转账凭证"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/tvCommit"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="@dimen/dp_44"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corner_3_pay_way_drawable"
+                android:gravity="center"
+                android:text="@string/commit"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

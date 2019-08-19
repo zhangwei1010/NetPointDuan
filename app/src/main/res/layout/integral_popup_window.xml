@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#55000000"
+	android:gravity="center"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/llTop"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+		android:orientation="horizontal"
+		android:visibility="gone"></LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/rlContent"
+		android:layout_width="@dimen/dp_335"
+		android:layout_height="@dimen/dp_472"
+		android:background="@color/white"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/tv_content"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="10dp"
+			android:layout_marginTop="40dp"
+			android:layout_marginRight="20dp"
+			android:lineSpacingExtra="25dp"
+			android:text="会员积分是快8速递提供给快递员的专属福利，通过积分
+可以参与快8会员平台的各项活动及优惠：
+1、快递员可通过收件消费，每日签到；参与抽奖活动，和
+特定任务赚取积分；
+2、积分可按照100积分抵扣1元，抵扣运费或兑换快8劵；
+3、可商城参与线上积分抢购、积分兑换、积分拍卖、积分
+游戏等活动；
+4、积分最多有效期为2年，本年度获得的积分将于下一个
+自然年年底过期；例如2019年获得的积分将于2020年12
+月31日清零。"
+			android:textColor="#666666"
+			android:textSize="11sp" />
+
+		<Button
+			android:id="@+id/btn_know"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/dp_53"
+			android:layout_marginLeft="97dp"
+			android:layout_marginRight="97dp"
+			android:background="@drawable/corner_20_login_drawable"
+			android:gravity="center"
+			android:text="我知道了"
+			android:textColor="@color/white"
+			android:textSize="16sp" />
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:text="选择支付方式"
+        android:textColor="#999999"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_onLine"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@drawable/corner_5_white_drawable"
+        android:gravity="center_vertical"
+        android:textColor="#f9f9f9">
+
+        <ImageView
+            android:id="@+id/ivWeiXinOnline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/on_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/ivWeiXinOnline"
+            android:text="线上"
+            android:textColor="#999999"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_online"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@drawable/check_online" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_offLine"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@drawable/corner_5_white_drawable"
+        android:gravity="center_vertical"
+        android:textColor="#f9f9f9">
+
+        <ImageView
+            android:id="@+id/ivOffline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/off_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/ivOffline"
+            android:text="线下"
+            android:textColor="#999999"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_offline"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@drawable/uncheck_online" />
+    </RelativeLayout>
+
+</LinearLayout>

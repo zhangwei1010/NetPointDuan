@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:visibility="visible"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rlContent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_51"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/photo"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            android:visibility="visible"></View>
+
+        <TextView
+            android:id="@+id/tvChooseAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_51"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="从手机相册选择"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_51"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="保存图片"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#e2e2e2"
+            android:visibility="visible"></View>
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_53"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

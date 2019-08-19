@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlContent"
+        android:layout_width="@dimen/dp_325"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/corner_5_grey1_drawable"
+        android:textColor="#f9f9f9">
+
+        <TextView
+            android:id="@+id/tvContract"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="15dp"
+            android:lineSpacingExtra="15dp"
+            android:textSize="17sp" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tvContract"
+            android:layout_marginTop="20dp"
+            android:background="#eeeeee"></View>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_infor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_41"
+            android:layout_below="@+id/view1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_compony_name"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_41"
+                android:layout_weight="1"
+                android:background="@drawable/stroke_grey1_drawable"
+                android:hint="公司名字"
+                android:paddingLeft="20dp"
+                android:textColor="#999999" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"></View>
+
+            <EditText
+                android:id="@+id/et_legal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_41"
+                android:layout_weight="1"
+                android:background="@drawable/stroke_grey1_drawable"
+                android:hint="*  法人姓名"
+                android:paddingLeft="20dp"
+                android:textColor="#999999" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_id_number"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_41"
+            android:layout_below="@+id/ll_infor"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/stroke_grey1_drawable"
+            android:digits="0123456789 X"
+            android:hint="*  身份证号码"
+            android:inputType="numberSigned"
+            android:paddingLeft="20dp"
+            android:textColor="#999999" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlContent"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="31dp"
+        android:layout_marginRight="@dimen/dp_20"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_last"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_weight="1"
+            android:background="@drawable/corner_24_contract_sign_drawable">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/last"
+                android:textColor="#666666"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <RelativeLayout
+            android:id="@+id/rl_sign_contract"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:background="@drawable/corner_24_login_drawable">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="签订合同"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

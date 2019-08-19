@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/corner_5_white_dispatch_drawable"
+	android:orientation="vertical">
+
+	<androidx.cardview.widget.CardView
+		android:id="@+id/cardview"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		app:cardCornerRadius="8dp"
+		app:cardElevation="5dp">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/dp_51"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="14dp"
+				android:paddingRight="14dp">
+
+				<ImageView
+					android:id="@+id/iv_user_icon"
+					android:layout_width="@dimen/dp_36"
+					android:layout_height="@dimen/dp_36" />
+
+				<TextView
+					android:id="@+id/tv_fromname"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="5dp"
+					android:layout_weight="1"
+					android:gravity="center_vertical"
+					android:text="王小豆"
+					android:textColor="#333333"
+					android:textSize="14sp" />
+
+				<TextView
+					android:id="@+id/tv_time"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="5dp"
+					android:gravity="center"
+					android:text="2019-06-28"
+					android:textColor="#999999"
+					android:textSize="12sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/dp_78"
+				android:background="#fbfbfb"
+				android:orientation="vertical">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="30dp"
+						android:layout_marginRight="26dp"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="14dp"
+						android:paddingRight="14dp">
+
+						<TextView
+							android:id="@+id/tv_from_address"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center"
+							android:text="郑州市"
+							android:textColor="#333333"
+							android:textSize="14sp" />
+
+						<TextView
+							android:id="@+id/tv_order_number"
+							android:layout_width="wrap_content"
+							android:layout_height="19dp"
+							android:layout_weight="1"
+							android:gravity="center"
+							android:text="联系电话：1589997878999"
+							android:textColor="#f78000"
+							android:textSize="12sp" />
+
+						<TextView
+							android:id="@+id/tv_to_address"
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="5dp"
+							android:gravity="center_vertical"
+							android:text="泉州市"
+							android:textColor="#333333"
+							android:textSize="14sp" />
+					</LinearLayout>
+
+					<View
+						android:layout_width="@dimen/dp_180"
+						android:layout_height="1dp"
+						android:background="#e4e4e4"></View>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="30dp"
+						android:layout_marginRight="26dp"
+						android:gravity="center_vertical"
+						android:orientation="horizontal"
+						android:paddingLeft="14dp"
+						android:paddingRight="14dp">
+
+						<TextView
+							android:id="@+id/tv_from_person"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center"
+							android:text="王小逗"
+							android:textColor="#999999"
+							android:textSize="12sp" />
+
+						<TextView
+							android:id="@+id/tv_order_status"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:gravity="center"
+							android:text="已派送"
+							android:textColor="@color/main_button"
+							android:textSize="12sp" />
+
+						<TextView
+							android:id="@+id/tv_to_person"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center"
+							android:text="王小逗"
+							android:textColor="#999999"
+							android:textSize="12sp" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/dp_42"
+				android:gravity="center|end"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/tv_dispatched"
+					android:layout_width="@dimen/dp_74"
+					android:layout_height="@dimen/dp_25"
+					android:background="@drawable/stroke_green1_drawable"
+					android:gravity="center"
+					android:text="派件"
+					android:textColor="@color/main_button"
+					android:textSize="12sp" />
+			</LinearLayout>
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
+
+</LinearLayout>

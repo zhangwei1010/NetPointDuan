@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_point_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="60dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rl_province"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_commit_success"
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_33"
+                android:src="@drawable/commit_success" />
+
+            <TextView
+                android:id="@+id/tv_province"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_33"
+                android:layout_toRightOf="@+id/iv_commit_success"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="提交成功"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_line_1"
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_commit_success"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@color/main_button" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_city"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_70"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rl_count1"
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_23">
+
+                <ImageView
+                    android:id="@+id/iv_in_review"
+                    android:layout_width="@dimen/dp_23"
+                    android:layout_height="@dimen/dp_23"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/in_review" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/rl_count1"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="快速审核中"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_review"
+                android:layout_toRightOf="@+id/rl_count1"
+                android:paddingLeft="20dp"
+                android:text="正在审核中，请耐心等待或拨打
+                              客服热线：400-123-123"
+                android:textColor="#999999"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_line_2"
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_count1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/main_button" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="#999999" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_33"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rl_count2"
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_23">
+
+                <ImageView
+                    android:id="@+id/iv_shenhe_success"
+                    android:layout_width="@dimen/dp_23"
+                    android:layout_height="@dimen/dp_23"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/in_review" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_shenhe_success"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_33"
+                android:layout_toRightOf="@+id/rl_count2"
+                android:paddingLeft="20dp"
+                android:text="审核通过"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="40dp"
+            android:layout_height="170dp"
+            android:src="@drawable/shenhetongguo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_33"
+                android:layout_toRightOf="@+id/iv_commit_success"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="提交成功"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/rl_count1"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="快速审核中"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_review"
+                android:layout_toRightOf="@+id/rl_count1"
+                android:paddingLeft="20dp"
+                android:text="正在审核中，请耐心等待或拨打客服热线：400-115-9979"
+                android:textColor="#999999"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_33"
+                android:layout_marginTop="23dp"
+                android:layout_toRightOf="@+id/rl_count2"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="审核通过"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/corner_5_green_drawable"
+        android:gravity="center"
+        android:text="下一步" />
+</LinearLayout>

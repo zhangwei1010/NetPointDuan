@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="green_base">#cb3b13</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black1">#333333</color>
+    <color name="black2">#999999</color>
+    <color name="grey_1">#e1e1e1</color>
+    <color name="grey_2">#f0f0f0</color>
+    <color name="transparent">#00000000</color>
+    <color name="light_red">#cb252a</color>
+    <color name="main_button">#cb3b13</color>
+    <color name="greya400">#898989</color>
+    <color name="green">#23C528</color>
+    <color name="my_dispath_text">#666666</color>
+    <color name="word_main_color">#333333</color>
+
+</resources>
