@@ -89,9 +89,9 @@ public class MapViewActivity extends Activity {
                 if (i == position) {
                     redLatLng = new LatLng(stationBean.latitude, stationBean.longtitude);
                     moveToPoint(latLng);
-                    locationUtil.setLocationMark(baiduMap, latLng, 20f, true, map -> initInforWindow(map, stationBean,latLng));
+                    locationUtil.setLocationMark(baiduMap, latLng, 40f, true, map -> initInforWindow(map, stationBean,latLng));
                 } else {
-                    locationUtil.setLocationMark(baiduMap, latLng, 20f, false, map -> initInforWindow(map, stationBean,latLng));
+                    locationUtil.setLocationMark(baiduMap, latLng, 40f, false, map -> initInforWindow(map, stationBean,latLng));
                 }
             }
         }
@@ -136,7 +136,7 @@ public class MapViewActivity extends Activity {
 
     private void moveToPoint(LatLng latLng) {
         MapStatus.Builder builder = new MapStatus.Builder();
-        builder.target(latLng).zoom(20f);
+        builder.target(latLng).zoom(10f);
         baiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
     }
 
