@@ -28,17 +28,11 @@ android {
         release {
             minifyEnabled false
             signingConfig signingConfigs.debug
-            shrinkResources false
-            zipAlignEnabled true
-            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
             signingConfig signingConfigs.debug
-            shrinkResources false
-            zipAlignEnabled true
-            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -62,7 +56,6 @@ android {
     }
     packagingOptions {
         exclude 'META-INF/app_debug.kotlin_module'
-
         exclude 'META-INF/DEPENDENCIES.txt'
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'

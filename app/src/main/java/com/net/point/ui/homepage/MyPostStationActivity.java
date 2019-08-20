@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.baidu.mapapi.model.LatLng;
@@ -15,6 +19,7 @@ import com.net.point.R;
 import com.net.point.adapter.PostStationAdapter;
 import com.net.point.model.HomeModel;
 import com.net.point.response.PostStationBean;
+import com.net.point.utils.AppUtils;
 import com.net.point.utils.MapLocationUtil;
 import com.net.point.utils.SpUtils;
 import com.net.point.view.HeadRecycleView;
@@ -24,15 +29,18 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 //我的驿站
 public class MyPostStationActivity extends Activity {
 
     @BindView(R.id.mRecycleView)
     HeadRecycleView mRecycleView;
+    @BindView(R.id.ll_bar)
+    LinearLayout ll_bar;
 
     private HomeModel model = new HomeModel();
-    private LatLng latLng;
+    private LatLng currentLatLng;
     private ArrayList<PostStationBean> orderBeans;
 
     public static void start(Context context) {
@@ -44,10 +52,11 @@ public class MyPostStationActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_post_station);
         ButterKnife.bind(this);
+        setStatusBar();
         initRecycleView();
         startLocate();
     }
-
+    @OnClick({R.id.ivBack})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ivBack:
@@ -61,7 +70,7 @@ public class MyPostStationActivity extends Activity {
             return;
         }
         showProgressDialog();
-        model.insertNearPosition(SpUtils.getIncNumber(), latLng.longitude, latLng.latitude, e -> {
+        model.insertNearPosition(SpUtils.getIncNumber(), currentLatLng.longitude, currentLatLng.latitude, e -> {
                     e.printStackTrace();
                     hideProgressDialog();
                     Log.e("", e.getMessage());
@@ -85,16 +94,14 @@ public class MyPostStationActivity extends Activity {
     }
 
     private void startMapView(ArrayList<PostStationBean> orderBeans, Integer position) {
-        MapViewActivity.start(this, orderBeans,position);
+        MapViewActivity.start(this, orderBeans,position,currentLatLng);
     }
 
-    private void startMapView(LatLng latLng) {
-        MapViewActivity.start(this, latLng);
-    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        MapLocationUtil.getInstance().stopLocation();
     }
 
     protected void toast(String message) {
@@ -134,7 +141,7 @@ public class MyPostStationActivity extends Activity {
     private void getLocation() {
         MapLocationUtil.getInstance().getLocalPoint(null, false, latLng1 -> {
             if (latLng1 != null) {
-                latLng = latLng1;
+                currentLatLng = latLng1;
                 loadData();
             }
         });
@@ -146,5 +153,25 @@ public class MyPostStationActivity extends Activity {
         if (requestCode == GPS_REQUEST_CODE) {
             getLocation();
         }
+    }
+
+    private void setStatusBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//5.0及以上
+            //根据上面设置是否对状态栏单独设置颜色
+            //getWindow().setStatusBarColor(getResources().getColor(R.color.white));//设置状态栏背景色
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
+        setParams();
+    }
+
+    private void setParams() {
+        ll_bar.setVisibility(View.VISIBLE);
+        //获取到状态栏的高度
+        int statusHeight = AppUtils.getStatusBarHeight(this);
+        //动态的设置隐藏布局的高度
+        ViewGroup.LayoutParams params = ll_bar.getLayoutParams();
+        params.height = statusHeight;
+        ll_bar.setLayoutParams(params);
     }
 }

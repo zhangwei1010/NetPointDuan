@@ -48,7 +48,7 @@ public class RetrofitUtil {
     public final static String SERVER_ADDRESS = "http://www.k8yz.com/";//域名
 
     //    //下面是测试服务器
-    public final static String TEST_SERVER_ADDRESS = "http://192.168.124.40:8081/";
+    public final static String TEST_SERVER_ADDRESS = "http://192.168.124.72:8081/";
 
     public static String getServerAddress() {
         return TEST_SERVER_ADDRESS;

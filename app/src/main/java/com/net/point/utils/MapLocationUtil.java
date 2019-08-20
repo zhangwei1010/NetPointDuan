@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.location.LocationManager;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.widget.LinearLayout;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -16,6 +18,7 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.InfoWindow;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
@@ -36,6 +39,7 @@ import com.net.point.R;
 
 import java.util.List;
 
+import butterknife.Action;
 import rx.functions.Action1;
 
 /**
@@ -176,7 +180,7 @@ public class MapLocationUtil {
      * @param latLng
      * @param zoom     设置地图放大比例
      */
-    public void setLocationMark(BaiduMap baiduMap, LatLng latLng, float zoom, boolean isRed) {
+    public void setLocationMark(BaiduMap baiduMap, LatLng latLng, float zoom, boolean isRed, Action1<BaiduMap> action1) {
         if (baiduMap == null) return;
         BitmapDescriptor bitmap = null;
         //构建Marker图标
@@ -198,6 +202,7 @@ public class MapLocationUtil {
                 .build();
         MapStatusUpdate statusUpdate = MapStatusUpdateFactory.newMapStatus(mapStatus);
         baiduMap.setMapStatus(statusUpdate);//设置地图状态改变
+        action1.call(baiduMap);
     }
 
     //设置定位点_图标为百度系统自带
@@ -271,6 +276,7 @@ public class MapLocationUtil {
         if (locationClient != null && locationClient.isStarted()) {
             locationClient.stop();
         }
+        locationClient = null;
     }
 
     //是否开启GPS

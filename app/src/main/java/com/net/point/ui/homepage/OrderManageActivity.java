@@ -40,7 +40,6 @@ public class OrderManageActivity extends BaseActivity {
 
         adapter.addFragment(getString(R.string.completed), completedFragment);
         adapter.addFragment(getString(R.string.uncompleted), unCompletedFragment);
-        showProgressDialog();
 
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);

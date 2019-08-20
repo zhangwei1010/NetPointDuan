@@ -1,6 +1,5 @@
 package com.net.point.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.net.point.R;
 import com.net.point.event.ReSettingIconEvent;
@@ -125,8 +126,8 @@ public class MineFragment extends Fragment {
         }, result -> {
             if (result.isSuccess() && result.getData() != null) {
                 httpResult = result;
+                showPopupWindow();
             }
-            showPopupWindow();
         });
     }
 

@@ -35,7 +35,6 @@ public class PostStationAdapter extends CommonItemAdapter<PostStationBean,
         AppUtils.setTexts(holder.tv_distance, item.distance);
         holder.tv_now_go.setOnClickListener(v -> {
             if (LatLng != null) {
-                LatLng latLng = new LatLng(item.longtitude, item.latitude);
                 LatLng.call(getPosition());
             }
         });
@@ -54,7 +53,6 @@ public class PostStationAdapter extends CommonItemAdapter<PostStationBean,
                         , parent, false);
         return new UnDispatchedHolderView(view);
     }
-
 
     public class UnDispatchedHolderView extends RecyclerView.ViewHolder {
 

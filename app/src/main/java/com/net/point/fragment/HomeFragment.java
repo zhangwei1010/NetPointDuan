@@ -1,6 +1,5 @@
 package com.net.point.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.net.point.R;
 import com.net.point.glide.GlideUtils;
 import com.net.point.model.HomeModel;

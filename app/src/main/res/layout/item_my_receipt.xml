@@ -17,9 +17,9 @@
 
 	<View
 		android:layout_width="match_parent"
-		android:layout_height="1dp"
-		android:layout_marginTop="5dp"
-		android:layout_marginBottom="5dp"
+		android:layout_height="0.5dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginBottom="8dp"
 		android:background="#dedede"></View>
 
 	<TextView
@@ -32,7 +32,8 @@
 
 	<RelativeLayout
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp">
 
 		<LinearLayout
 			android:id="@+id/ll_adressee"
@@ -53,6 +54,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="10dp"
+				android:layout_marginTop="8dp"
 				android:layout_marginRight="10dp"
 				android:src="@drawable/arrow_right_red" />
 
@@ -69,7 +71,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_below="@+id/ll_adressee"
-			android:layout_marginTop="5dp"
+			android:layout_marginTop="8dp"
 			android:gravity="center_vertical"
 			android:orientation="horizontal">
 

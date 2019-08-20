@@ -3,9 +3,6 @@ package com.net.point.ui;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -22,12 +19,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.net.point.NetPointApplication;
 import com.net.point.R;
 import com.net.point.base.BaseActivity;
 import com.net.point.fragment.HomeFragment;
 import com.net.point.fragment.MineFragment;
+import com.net.point.fragment.OrderManageFragment;
 import com.net.point.model.HomeModel;
 import com.net.point.response.VersionBean;
 import com.net.point.service.DownloadIntentService;
@@ -95,7 +95,7 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.ll_order:
                 setButtonStatue(false, true, false);
-//                addFragment(new MineFragment());
+                addFragment(new OrderManageFragment());
                 break;
             case R.id.ll_mine:
 //                useThemestatusBarColor = true;
@@ -116,7 +116,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void addFragment(Fragment fragment) {
-        FragmentManager manager = getFragmentManager();
+        androidx.fragment.app.FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.contenLayout, fragment);
         transaction.commit();

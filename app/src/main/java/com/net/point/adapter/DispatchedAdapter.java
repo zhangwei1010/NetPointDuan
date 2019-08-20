@@ -40,7 +40,6 @@ public class DispatchedAdapter extends CommonItemAdapter<OrderDetailsBean,
         return new DispatchedHolderView(view);
     }
 
-
     public class DispatchedHolderView extends RecyclerView.ViewHolder {
 
         @BindView(R.id.tv_time)

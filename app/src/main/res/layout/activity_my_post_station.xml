@@ -8,6 +8,13 @@
 	android:background="#f0f0f0"
 	android:orientation="vertical"
 	tools:context=".ui.homepage.MyPostStationActivity">
+	<LinearLayout
+		android:id="@+id/ll_bar"
+		android:layout_width="fill_parent"
+		android:layout_height="1dp"
+		android:background="@color/white"
+		android:orientation="vertical"
+		android:visibility="gone"></LinearLayout>
 
 	<RelativeLayout
 		android:id="@+id/rlAppbar"

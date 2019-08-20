@@ -31,14 +31,19 @@ public class OrderManCompletedAdapter extends CommonItemAdapter<OrderDetailsBean
     @Override
     protected void onBindViewHolder(@NonNull MyBenefitsHolderView holder, @Nullable OrderDetailsBean item) {
         AppUtils.setTexts(holder.tv_number, "订单号： " + item.number);
+        AppUtils.setTexts(holder.tv_contracts, "联系人： " + item.toname);
+        AppUtils.setTexts(holder.tv_contracts_way, "联系方式： " + item.totel);
         AppUtils.setTexts(holder.tv_time, item.begintime);
 //        AppUtils.setTexts(holder.tv_benefits, item.isHandle);
         if (type.equals("1")) {
             holder.tv_see_details.setText("查看详情");
             holder.tv_see_details.setOnClickListener(view -> OrderManageDetailsActivity.
-                    start(NetPointApplication.getInstance(),item.number));
+                    start(NetPointApplication.getInstance(), item.number));
         } else
             holder.tv_see_details.setText("派单");
+
+        holder.itemView.setOnClickListener(view -> OrderManageDetailsActivity.
+                start(NetPointApplication.getInstance(), item.number));
     }
 
     @NonNull
@@ -59,6 +64,10 @@ public class OrderManCompletedAdapter extends CommonItemAdapter<OrderDetailsBean
         TextView tv_number;
         @BindView(R.id.tv_see_details)
         TextView tv_see_details;
+        @BindView(R.id.tv_contracts)
+        TextView tv_contracts;
+        @BindView(R.id.tv_contracts_way)
+        TextView tv_contracts_way;
 
         public MyBenefitsHolderView(@NonNull View itemView) {
             super(itemView);

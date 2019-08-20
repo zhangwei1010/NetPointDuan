@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.net.point.NetPointApplication;
 import com.net.point.R;
 import com.net.point.response.OrderDetailsBean;
+import com.net.point.ui.homepage.OrderManageDetailsActivity;
 import com.net.point.utils.AppUtils;
 
 import butterknife.BindView;
@@ -24,16 +25,18 @@ public class MyReceiptListAdapter extends CommonItemAdapter<OrderDetailsBean,
 
     @Override
     protected void onBindViewHolder(@NonNull MyReceiptHolderView holder, @Nullable OrderDetailsBean item) {
-        AppUtils.setTexts(holder.tv_number, item.number);
+        AppUtils.setTexts(holder.tv_number, "订单号:" + item.number);
         AppUtils.setTexts(holder.tv_receipt_type, item.isgoods);
         AppUtils.setTexts(holder.tv_from_person, item.fromname);
-        AppUtils.setTexts(holder.tv_to_person, item.fromname);
+        AppUtils.setTexts(holder.tv_to_person, item.toname);
         AppUtils.setTexts(holder.tv_data, item.createtime);
         if (item.paymentflag == 0) {//已付过了（现付）
             holder.iv_pay.setImageResource(R.drawable.now_pay);
         } else if (item.paymentflag == 1) {//未付过（到付）
             holder.iv_pay.setImageResource(R.drawable.arrive_pay);
         }
+        holder.itemView.setOnClickListener(view -> OrderManageDetailsActivity.
+                start(NetPointApplication.getInstance(), item.number));
     }
 
     @NonNull

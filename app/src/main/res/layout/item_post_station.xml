@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
-	android:layout_height="@dimen/dp_64"
+	android:layout_height="wrap_content"
 	android:orientation="vertical">
 
 	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="@dimen/dp_64"
-		android:orientation="horization">
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
 		<ImageView
 			android:id="@+id/iv_icon"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:layout_centerVertical="true"
-			android:layout_marginLeft="15dp"
+			android:layout_marginLeft="12dp"
 			android:src="@drawable/express_point_red" />
 
 		<LinearLayout
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginLeft="15dp"
+			android:layout_marginLeft="10dp"
 			android:layout_marginTop="15dp"
 			android:layout_marginBottom="15dp"
 			android:layout_weight="1"
@@ -35,12 +35,12 @@
 				android:singleLine="true"
 				android:text="鑫苑世纪东城·西苑快递点"
 				android:textColor="#333333"
-				android:textSize="16sp" />
+				android:textSize="14sp" />
 
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:orientation="horization">
+				android:orientation="horizontal">
 
 				<TextView
 					android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
 					android:gravity="center"
 					android:text="距离目前位置"
 					android:textColor="#666666"
-					android:textSize="16sp" />
+					android:textSize="12sp" />
 
 				<TextView
 					android:id="@+id/tv_distance"
@@ -58,7 +58,7 @@
 					android:gravity="center"
 					android:text="  250km"
 					android:textColor="#54ad2c"
-					android:textSize="16sp" />
+					android:textSize="12sp" />
 			</LinearLayout>
 
 		</LinearLayout>
@@ -66,10 +66,10 @@
 		<LinearLayout
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:layout_marginLeft="15dp"
-			android:layout_marginRight="15dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="12dp"
 			android:gravity="center"
-			android:orientation="horization">
+			android:orientation="horizontal">
 
 			<TextView
 				android:id="@+id/tv_now_go"

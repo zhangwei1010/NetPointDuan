@@ -49,7 +49,7 @@ public class ShareActivity extends BaseActivity {
         setContentTitle(R.string.share_friends);
         showShareView(true);
         iv_share_background = findViewById(R.id.iv_share_background);
-        Observable.timer(1, TimeUnit.SECONDS)
+        Observable.timer(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aLong -> showShareView());
     }
