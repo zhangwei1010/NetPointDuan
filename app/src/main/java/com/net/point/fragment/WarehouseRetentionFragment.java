@@ -81,7 +81,7 @@ public class WarehouseRetentionFragment extends BaseFragment {
 
     private void initRecycleView() {
         mAdapter = new UnDispatchedAdapter(1, number -> {
-            dispatch(number);
+            dispatchOrder(number);
         });
         mRecycleView.setOnLoadListener(o -> loadMore());
         mSwipeRefreshLayout.setRefreshing(false);
@@ -89,7 +89,21 @@ public class WarehouseRetentionFragment extends BaseFragment {
         mRecycleView.setAdapter(mAdapter);
     }
 
-    private void dispatch(String number) {
+    private void dispatchOrder(String number) {
+        if (TextUtils.isEmpty(number)) return;
+        model.dispatchOrder(number, SpUtils.getUserId(), e -> {
+            e.printStackTrace();
+            toast(e.getMessage());
+        }, result -> {
+            int code = result.getCode();
+            String msg = result.getMsg();
+            if (result.isSuccess()) {
+                if (code == 1) {//发送成功
+                    mAdapter.notifyDataSetChanged();
+                    toast(msg);
+                }
+            }
+        });
     }
 
     private void refresh() {

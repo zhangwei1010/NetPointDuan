@@ -109,7 +109,7 @@ public class MineFragment extends Fragment {
                 loadSignData();
                 break;
             case R.id.rl_complaint_record:
-                MyPenaltyActivity.start(getActivity(),1);
+                MyPenaltyActivity.start(getActivity(), 1);
                 break;
             case R.id.rl_customer_phone:
                 CustomerPhoneActivity.start(getActivity());
@@ -126,8 +126,8 @@ public class MineFragment extends Fragment {
         }, result -> {
             if (result.isSuccess() && result.getData() != null) {
                 httpResult = result;
-                showPopupWindow();
             }
+            showPopupWindow();
         });
     }
 

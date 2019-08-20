@@ -17,15 +17,18 @@ import com.net.point.utils.AppUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.functions.Action1;
 
 public class OrderManCompletedAdapter extends CommonItemAdapter<OrderDetailsBean,
 
         OrderManCompletedAdapter.MyBenefitsHolderView> {
 
     private String type = "";
+    private Action1<String> action1;
 
-    public OrderManCompletedAdapter(String type) {
+    public OrderManCompletedAdapter(String type, Action1<String> action1) {
         this.type = type;
+        this.action1 = action1;
     }
 
     @Override
@@ -39,9 +42,14 @@ public class OrderManCompletedAdapter extends CommonItemAdapter<OrderDetailsBean
             holder.tv_see_details.setText("查看详情");
             holder.tv_see_details.setOnClickListener(view -> OrderManageDetailsActivity.
                     start(NetPointApplication.getInstance(), item.number));
-        } else
+        } else {
+            holder.tv_see_details.setOnClickListener(view -> {
+                if (action1 != null) {
+                    action1.call(item.number);
+                }
+            });
             holder.tv_see_details.setText("派单");
-
+        }
         holder.itemView.setOnClickListener(view -> OrderManageDetailsActivity.
                 start(NetPointApplication.getInstance(), item.number));
     }

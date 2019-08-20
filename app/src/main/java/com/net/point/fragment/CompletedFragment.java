@@ -77,7 +77,8 @@ public class CompletedFragment extends BaseFragment {
                 });
     }
 
-    private OrderManCompletedAdapter mAdapter = new OrderManCompletedAdapter("1");
+    private OrderManCompletedAdapter mAdapter = new OrderManCompletedAdapter("1", s -> {
+    });
 
     private void initRecycleView() {
         mRecycleView.setOnLoadListener(o -> loadMore());

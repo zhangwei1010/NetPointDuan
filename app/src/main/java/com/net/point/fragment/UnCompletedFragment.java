@@ -76,13 +76,33 @@ public class UnCompletedFragment extends BaseFragment {
                 });
     }
 
-    private OrderManCompletedAdapter mAdapter = new OrderManCompletedAdapter("2");
+    private OrderManCompletedAdapter mAdapter;
 
     private void initRecycleView() {
+        mAdapter = new OrderManCompletedAdapter("2", number -> {
+            dispatchOrder(number);
+        });
         mRecycleView.setOnLoadListener(o -> loadMore());
         mSwipeRefreshLayout.setRefreshing(false);
         mSwipeRefreshLayout.setOnRefreshListener(() -> refresh());
         mRecycleView.setAdapter(mAdapter);
+    }
+
+    private void dispatchOrder(String number) {
+        if (TextUtils.isEmpty(number)) return;
+        model.dispatchOrder(number, SpUtils.getUserId(), e -> {
+            e.printStackTrace();
+            toast(e.getMessage());
+        }, result -> {
+            int code = result.getCode();
+            String msg = result.getMsg();
+            if (result.isSuccess()) {
+                if (code == 1) {//发送成功
+                    mAdapter.notifyDataSetChanged();
+                    toast(msg);
+                }
+            }
+        });
     }
 
     private void refresh() {

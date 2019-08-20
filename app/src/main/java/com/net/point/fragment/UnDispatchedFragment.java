@@ -81,7 +81,7 @@ public class UnDispatchedFragment extends BaseFragment {
 
     private void initRecycleView() {
         mAdapter = new UnDispatchedAdapter(1, number -> {
-            dispatch(number);
+            dispatchOrder(number);
         });
         mRecycleView.setOnLoadListener(o -> loadMore());
         mSwipeRefreshLayout.setRefreshing(false);
@@ -89,7 +89,7 @@ public class UnDispatchedFragment extends BaseFragment {
         mRecycleView.setAdapter(mAdapter);
     }
 
-    private void dispatch(String number) {
+    private void dispatchOrder(String number) {
         if (TextUtils.isEmpty(number)) return;
         model.dispatchOrder(number, SpUtils.getUserId(), e -> {
             e.printStackTrace();
